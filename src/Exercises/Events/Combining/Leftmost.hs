@@ -25,4 +25,23 @@ leftmostExercise :: Reflex t
                     , Event t Text
                     )
 leftmostExercise eIn =
-  (never, never, never, never)
+  let
+    f = mof 3 "Fizz" eIn
+    b = mof 5 "Buzz" eIn
+    fb = f <> b
+    t = Text.pack . show <$> eIn
+    -- originally you had `f` and `b` in this list. Note that `fb` takes care of
+    -- this for us as it combines the outputs of the events, so we get "",
+    -- "Fizz", or "FizzBuzz" depending on which events fire.
+    sol = leftmost [fb, t]
+  in
+    (f, b, fb, sol)
+
+mof ::
+  Reflex t
+  => Int
+  -> Text
+  -> Event t Int
+  -> Event t Text
+mof a t =
+  (t <$) . ffilter ((== 0) . (`mod` a))

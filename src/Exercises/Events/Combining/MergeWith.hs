@@ -18,4 +18,4 @@ mergeWithExercise :: Reflex t
                   -> Event t Int
                   -> Event t Int
 mergeWithExercise eIn1 eIn2 =
-  never
+  mergeWith (+) [eIn1, eIn2]

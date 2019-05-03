@@ -13,9 +13,9 @@ module Exercises.Events.Transforming.FmapConst (
 import Reflex
 
 fmapConstExercise3 :: Reflex t => Event t () -> Event t Int
-fmapConstExercise3 eIn =
-  never
+fmapConstExercise3 =
+  (3 <$)
 
 fmapConstExercise5 :: Reflex t => Event t () -> Event t Int
-fmapConstExercise5 eIn =
-  never
+fmapConstExercise5 =
+  (5 <$)

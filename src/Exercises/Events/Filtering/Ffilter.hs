@@ -12,5 +12,5 @@ module Exercises.Events.Filtering.Ffilter (
 import Reflex
 
 ffilterExercise :: Reflex t => Event t Int -> Event t Int
-ffilterExercise eIn =
-  never
+ffilterExercise =
+  ffilter ((== 0) . (`mod` 3))

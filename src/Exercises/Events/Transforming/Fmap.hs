@@ -12,5 +12,5 @@ module Exercises.Events.Transforming.Fmap (
 import Reflex
 
 fmapExercise :: Reflex t => Event t Int -> Event t Int
-fmapExercise eIn =
-  never
+fmapExercise =
+  fmap (*2)
