@@ -14,5 +14,5 @@ import Reflex
 fmapExercise :: Reflex t
              => Behavior t Int
              -> Behavior t Int
-fmapExercise bIn =
-  pure 0
+fmapExercise =
+  ((*5) <$>)

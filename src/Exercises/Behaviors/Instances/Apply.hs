@@ -16,4 +16,4 @@ applyExercise :: Reflex t
               -> Behavior t Int
               -> Behavior t Int
 applyExercise bIn1 bIn2 =
-  pure 0
+  (*) <$> bIn1 <*> bIn2

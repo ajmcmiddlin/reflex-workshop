@@ -16,4 +16,4 @@ tagExercise :: Reflex t
             -> Event t ()
             -> Event t Int
 tagExercise bIn eIn =
-  never
+  (*5) <$> bIn <@ eIn
